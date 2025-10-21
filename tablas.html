@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+    <style>
+        table#tipo, th, td {
+            border: 2px solid rgb(58, 102, 205);
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        tr:hover { /* Evento: El cursor pasa encima del elemento */
+            background-color: #7d7878;
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(95, 202, 177);
+        }
+    </style>
+</head>
+<body>
+    <h1>Tablas</h1>
+    <p>Las tablas son otra forma de organizar contenido.</p>
+    <p>
+        Se utilizan 4 <b>etiquetas</b> <code>table</code>, <code>tr</code>, 
+        <code>th</code> y <code>td</code>.
+    </p>
+    
+    <h2>Tabla 1</h2>
+    
+    <table>
+        <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+            <th>Encabezado 3</th>
+        </tr>
+        <!-- tr*4>td{Elemento $}*3 -->
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+            <td>Elemento 3</td>
+        </tr>
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+            <td>Elemento 3</td>
+        </tr>
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+            <td>Elemento 3</td>
+        </tr>
+        <tr>
+            <td>Elemento 1</td>
+            <td>Elemento 2</td>
+            <td>Elemento 3</td>
+        </tr>
+    </table>
+
+    <h2>Tabla 2</h2>
+
+    <table id="tipo">
+        <tr>
+            <th>Cabeza 1</th>
+            <th>Cabeza 2</th>
+            <th>Cabeza 3</th>
+            <th>Cabeza 4</th>
+        </tr>
+        <tr>
+            <td>Lorem 1</td>
+            <td>Lorem 2</td>
+            <td>Lorem 3</td>
+            <td>Lorem 4</td>
+        </tr>
+        <tr>
+            <td>Lorem 1</td>
+            <td>Lorem 2</td>
+            <td>Lorem 3</td>
+            <td>Lorem 4</td>
+        </tr>
+        <tr>
+            <td>Lorem 1</td>
+            <td>Lorem 2</td>
+            <td>Lorem 3</td>
+            <td>Lorem 4</td>
+        </tr>
+    </table>
+</body>
+</html>

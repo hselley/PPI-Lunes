@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <script>
+        function obtenerValor() {
+            valor = document.getElementById("numero").value;
+            console.log(valor);
+            var x = parseInt(valor);
+            console.log(x);
+            factorial(x);
+        }
+
+        function factorial(n) {
+            // console.log(n);
+            var f=1;
+            for(i=1; i<=n; i++) {
+                f = f * i;
+                console.log(f);
+            }
+            salida = n + "! = " + f;
+            document.getElementById("resultado").innerHTML = salida;
+        }
+
+        function borrar() {
+            document.getElementById("resultado").innerHTML = "";
+            document.getElementById("numero").value = '';
+        }
+    </script>
+</head>
+<body>
+    <h1>Factorial Cíclico</h1>
+    <!-- 
+        5! = 1*2*3*4*5 = 120
+        7! = 1*2*3*4*5*6*7 
+        0! = 1
+    -->
+    <p>Ingrese un número positivo</p>
+    <form action="">
+        <input type="number" id="numero" min="0" step="1">
+    </form>
+    <button onclick="obtenerValor()">Calcular</button>
+    <button onclick="borrar()">Borrar</button>
+    <p id="resultado"></p>
+</body>
+</html>
+
