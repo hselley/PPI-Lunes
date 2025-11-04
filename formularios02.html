@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de videojuegos</title>
+    <script type="text/javascript" src="js/registro.js"></script>
+</head>
+<body>
+    <h1>Registro de videojuegos</h1>
+    <form action="">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre"> <br>
+        <label for="pub">Publisher:</label>
+        <input type="text" name="pub" id="pub"> <br>
+        
+        <h3>Consola:</h3>
+        <input type="radio" name="consola" value="XBOX Series S/X">XBOX Series S/X <br>
+        <input type="radio" name="consola" value="Playstation 5">Playstation 5 <br>
+        <input type="radio" name="consola" value="Nintendo Switch/Switch 2">Nintendo Switch/Switch 2 <br>
+
+        <h3>Medio</h3>
+        <input type="checkbox" name="medio" value="Digital">Digital <br>
+        <input type="checkbox" name="medio" value="Físico">Físico <br>
+
+        <h3>Fecha de adquisición</h3>
+        <input type="date" id="fecha">
+    </form>
+    <button onclick="registro()">Registro</button>
+    <h3>Registro de juegos</h3>
+    <table id="videojuegos"></table>
+</body>
+</html>

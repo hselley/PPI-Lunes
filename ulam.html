@@ -1,0 +1,45 @@
+<!-- Serie de ULAM: par = división por dos, impar = multiplicación por 3 más uno -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULAM</title>
+    <script>
+        function ulam() {
+            var y = "";
+            
+            x = document.getElementsByName('numero')[0].value;
+            // x = document.getElementById('numero').value;
+            console.log(x);
+            valor = parseInt(x);
+
+            while(valor != 1) {
+                if(valor % 2 == 0)  { //par
+                    valor /= 2; // valor = valor / 2
+                } else {    // impar
+                    valor = 3*valor + 1;
+                }
+                console.log(valor);
+                y = y + "<br>" + valor;
+            }
+            document.getElementById('resultado').innerHTML = y;
+        }
+
+        function borrar() {
+            document.getElementById('resultado').innerHTML = "";
+            document.getElementById('numero').value = "";
+        }
+    </script>
+ </head>
+ <body>
+    <h1>Serie de ULAM</h1>
+    <form action="">
+        <input type="number" name="numero" id="numero" min="1" step="1">
+    </form>
+    <button onclick="ulam()">Calcular</button>
+    <button onclick="borrar()">Borrar</button>
+    <h3>Resultado de la serie</h3>
+    <p id="resultado"></p>
+ </body>
+ </html>

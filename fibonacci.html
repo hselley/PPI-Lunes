@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <script>
+        function obtenerValor() {
+            x = document.getElementById('numero').value;
+            valor = parseInt(x);
+            var resultado = fibonacci(valor);
+            console.log(resultado);
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+
+        function fibonacci(n) {
+            if(n==0 || n==1) {  // Condición de paro de la recursividad
+                return n;
+            } else {    // Llamada recursiva
+                return fibonacci(n-1) + fibonacci(n-2);
+            }
+        }
+
+        function borrar() {
+            document.getElementById('numero').value = "";
+            document.getElementById('resultado').innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>Serie de Fibonacci</h1>
+    <p>Ingrese un número positivo</p>
+    <form action="">
+        <input type="number" name="numero" id="numero" min="0" step="0">
+    </form>
+    <button onclick="obtenerValor()">Calcular</button>
+    <button onclick="borrar()">Borrar</button>
+    <p id="resultado"></p>
+</body>
+</html>

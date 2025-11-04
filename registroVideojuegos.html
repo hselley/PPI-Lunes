@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mi sistema</title>
+    <link rel="stylesheet" type="text/css" href="css/tablasFormulario.css">
+    <script type="text/javascript" src="js/tablas.js"></script>
+  </head>
+  <body>
+    <h1>Registro de Videojuegos</h1>
+    <form>
+      Nombre: <input type="text" id="nombre"><br>
+      Publisher: <input type="text" id="pub"><br>
+      <h2>Consola:</h2>
+      <input type="checkbox" id="360">XBOX 360<br>
+      <input type="checkbox" id="ps3">PS3<br>
+      <input type="checkbox" id="wii">Wii<br><br>
+      <input type="radio" name="estado" id="nuevo">Nuevo<br>
+      <input type="radio" name="estado" id="usado">Usado<br>
+      <h2>Fecha adquisición:</h2>
+      <input type="date" id="fecha">
+      <h2>Portada</h2>
+        <input type="file" id="portada">
+    </form>
+    <button type="button" onclick="registrar()">Registrar</button>
+    <table id="consolas"></table>
+  </body>
+</html>

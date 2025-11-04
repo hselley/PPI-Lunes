@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Videojuegos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0
+ 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .radio-item input[type="radio"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+
+        tr:hover {
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease;
+        }
+
+        .no-registros {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .registro-count {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .consola-seleccionada {
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Videojuegos</h1>
+        
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="nombreVideojuego">Nombre del Videojuego:</label>
+                <input type="text" id="nombreVideojuego" name="nombreVideojuego" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="publisher">Publisher:</label>
+                <input type="text" id="publisher" name="publisher" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Consola:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="xbox" name="consola" value="XBOX Series S/X">
+                        <label for="xbox">XBOX Series S/X</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="playstation" name="consola" value="Playstation 5">
+                        <label for="playstation">Playstation 5</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="nintendo" name="consola" value="Nintendo Switch">
+                        <label for="nintendo">Nintendo Switch</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Medio:</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="fisico" name="medio" value="Físico" required>
+                        <label for="fisico">Físico</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="digital" name="medio" value="Digital" required>
+                        <label for="digital">Digital</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="fechaCompra">Fecha de Compra:</label>
+                <input type="date" id="fechaCompra" name="fechaCompra" required>
+            </div>
+            
+            <button type="submit" class="btn">Registrar</button>
+        </form>
+
+        <div id="tablaResultados">
+            <h2>Registro de Videojuegos</h2>
+            <table id="tablaVideojuegos">
+                <thead>
+                    <tr>
+                        <th>Videojuego</th>
+                        <th>Publisher</th>
+                        <th>Consola</th>
+                        <th>Medio</th>
+                        <th>Fecha Compra</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <tr>
+                        <td colspan="5" class="no-registros">No hay registros</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const nombreVideojuego = document.getElementById('nombreVideojuego').value;
+            const publisher = document.getElementById('publisher').value;
+            const consolas = Array.from(document.querySelectorAll('input[name="consola"]:checked')).map(cb => cb.value);
+            const medio = document.querySelector('input[name="medio"]:checked')?.value || '';
+            const fechaCompra = document.getElementById('fechaCompra').value;
+            
+            // Validar campos obligatorios
+            if (!nombreVideojuego || !publisher || consolas.length === 0 || !medio || !fechaCompra) {
+                alert('Por favor complete todos los campos obligatorios');
+                return;
+            }
+            
+            // Formatear fecha para mostrar
+            const fechaFormateada = new Date(fechaCompra).toLocaleDateString('es-ES');
+            
+            // Crear fila de tabla
+            const tabla = document.getElementById('cuerpoTabla');
+            
+            // Si es la primera fila, eliminar el mensaje de "No hay registros"
+            if (tabla.querySelector('.no-registros')) {
+                tabla.innerHTML = '';
+            }
+            
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${nombreVideojuego}</td>
+                <td>${publisher}</td>
+                <td>${consolas.join(', ')}</td>
+                <td>${medio}</td>
+                <td>${fechaFormateada}</td>
+            `;
+            
+            // Agregar fila a la tabla
+            tabla.appendChild(fila);
+            
+            // Limpiar formulario
+            document.getElementById('registroForm').reset();
+            
+            // Mostrar mensaje de éxito
+            console.log('Videojuego registrado exitosamente');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <h1>Registro de usuarios</h1>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required> <br>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" id="correo" required> <br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" id="contrasena" required> 
+        
+        <h3>Genero:</h3>
+        <input type="radio" name="genero" value="Masculino">Masculino <br>
+        <input type="radio" name="genero" value="Femenino">Femenino <br>
+        <input type="radio" name="genero" value="Otro">Otro <br>
+        
+        <h3>Medio de transporte:</h3>
+        <input type="checkbox" name="transporte" value="Automóvil">Automóvil <br>
+        <input type="checkbox" name="transporte" value="Transporte Público">Transporte Público <br>
+        <input type="checkbox" name="transporte" value="Motocicleta">Motocicleta <br>
+        <input type="checkbox" name="transporte" value="Bicicleta">Bicicleta <br>
+
+        <input type="submit" onclick="registro()">
+    </form>
+    <!-- <button onclick="registro()">Registro</button> -->
+    <p id="resultado"></p>
+
+    <script>
+        function registro() {
+            x = "<h2>Registro completado</h2>";
+            x = x + "<p>" + document.getElementById('nombre').value + "</p>";
+            x = x + "<p>" + document.getElementById('correo').value + "</p>";
+            x = x + "<p>" + document.getElementById('contrasena').value + "</p>";
+
+            // Extracción de los inputs radio
+            var g = document.getElementsByName('genero');
+            var genero = "";
+            // Primer forma: método clásico
+            // for(i=0; i<g.length; i++) {
+            //     if(g[i].checked) {
+            //         genero = g[i].value;
+            //         console.log(genero);
+            //         x = x + "<p>" + genero + "</p>";
+            //     }
+            // }
+
+            // Segunda forma: Mejora del clásico
+            y = document.querySelector('input[name=genero]:checked');
+            if(y!=null) {
+                genero = y.value;
+                console.log(genero);
+                x = x + "<p>" + genero + "</p>";
+            }
+
+            // Extracción de los inputs checkbox
+            y = document.getElementsByName('transporte');
+            var t = "";
+            // Primer método: el clásico
+            // for(i=0; i<y.length; i++) {
+            //     if(y[i].checked) {
+            //         t = y[i].value;
+            //         console.log(t);
+            //         x = x + "<p>" + t + "</p>";
+            //     }
+            // }
+
+            // Segundo Método: mejora del clásico
+            // for(i of y) {
+            //     if(i.checked) {
+            //         t = i.value;
+            //         console.log(t);
+            //         x = x + "<p>" + t + "</p>";
+            //     }
+            // }
+
+            // Tercer método: Más práctica
+            z = document.querySelectorAll('input[name=transporte]:checked');
+            for(var v of z) {
+                t = v.value;
+                console.log(t);
+                x = x + "<p>" + t + "</p>";
+            }
+
+            document.getElementById('resultado').innerHTML = x;
+        }
+    </script>
+</body>
+</html>
